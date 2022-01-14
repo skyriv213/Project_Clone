@@ -29,10 +29,16 @@ class CpStackCode:
 
 instCpStockCode = CpStackCode()
 print(instCpStockCode.GetCount())
-print(instCpStockCode.NameToCode("유한양행")
-
+print(instCpStockCode.NameToCode("유한양행"))
 
 #EX - 마이크로소프트의 인터넷 익스플로러에 대한 객체를 생성하려면 다음과 같이 구현하면 됨
+
+'''
+win32com.client라는 모듈을 사용하기 위해 import를 진행
+win32com내부의 Dispatch라는 함수를 호줄하면서, 함수의 인자로 "InternetExplorer.Application"라는 문자열을 사용
+Dispatch라는 함수가 호출이 되면 객체가 생성이 되면서 explore라는 변수가 생성된 COM을 바인딩한다.
+'''
+
 import win32com.client
 
 explore = win32com.client.Dispatch("InternetExplorer.Application")
@@ -41,8 +47,5 @@ explore.Visible = True  # True / False를 통해 익스플로러의 행동을 �
 word = win32com.client.Dispatch("Word.Application")
 word.Visible = True
 
-'''
-win32com.client라는 모듈을 사용하기 위해 import를 진행
-win32com내부의 Dispatch라는 함수를 호줄하면서, 함수의 인자로 "InternetExplorer.Application"라는 문자열을 사용
-Dispatch라는 함수가 호출이 되면 객체가 생성이 되면서 explore라는 변수가 생성된 COM을 바인딩한다.
-'''
+excel = win32com.client.Dispatch("Excel.Application")
+excel.Visible = True
